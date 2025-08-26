@@ -4,7 +4,7 @@ pipeline {
     environment {
         GH_REPO = 'https://github.com/ishaaa444/cicdapp.git'
         GH_BRANCH = 'gh-pages'
-        GITHUB_TOKEN = credentials('github_token') // <-- Use your Jenkins credential ID here
+        GITHUB_TOKEN = credentials('github-token') // <-- Use your Jenkins credential ID here
     }
 
     stages {
