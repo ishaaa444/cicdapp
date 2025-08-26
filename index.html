@@ -1,94 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Profile Card</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isha Limbasiya - Portfolio</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #f7f7f7;
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            color: #666;
         }
 
         .contact-info {
+            margin-top: 10px;
             font-size: 14px;
-            text-align: right;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .intro {
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background-color: #ddd;
-            margin: 30px 0;
-        }
-
-        h2 {
-            font-size: 18px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
             color: #444;
         }
 
-        .education-item {
-            margin-bottom: 25px;
+        h2 {
+            font-size: 22px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #222;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .education-item, .activity-item, .skill-item, .project-item {
+            margin-bottom: 15px;
         }
 
         .date {
             font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .degree {
-            font-weight: bold;
-            margin-bottom: 5px;
+            color: #555;
         }
 
         ol {
             padding-left: 20px;
         }
+
+        ul.skills {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.skills li {
+            display: inline-block;
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+            margin: 5px 5px 5px 0;
+            border-radius: 5px;
+        }
+
+        .project-item a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .project-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header>
         <h1>Isha Limbasiya</h1>
+        <p>Web Designer & Developer | Crafting Engaging Digital Experiences</p>
         <div class="contact-info">
-            <div>M: 7694949999</div>
-            <div>E: ishalimbasiya@gmail.com</div>
+            <div>Mobile: 7694949999</div>
+            <div>Email: ishalimbasiya@gmail.com</div>
+        </div>
+    </header>
+
+    <div class="section">
+        <h2>About Me</h2>
+        <p>Hi! I'm Isha, a passionate web designer with 2+ years of experience creating user-friendly digital experiences. I specialize in responsive design, UI/UX principles, and clean, functional code. Outside of designing, I explore the latest web trends and sketch interface ideas to improve creativity.</p>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+        <div class="education-item">
+            <div class="date">2022 - 2026</div>
+            <div>Marwadi University - Rajkot | B.Tech in Computer Science</div>
+        </div>
+        <div class="education-item">
+            <div class="date">2019 - 2022</div>
+            <div>XYZ Higher Secondary School | Science Stream</div>
         </div>
     </div>
 
-    <div class="intro">
-        Hey! I'm a passionate web designer with [X] years of experience crafting user-friendly digital experiences. 
-        I specialize in responsive design, UI/UX principles, and clean, functional code. 
-        When I'm not designing, I explore the latest web trends or sketch interface ideas.
+    <div class="section">
+        <h2>Extra-Curricular Activities</h2>
+        <ol class="activity-item">
+            <li>Member of University Coding Club</li>
+            <li>Participated in Hackathons and Web Development Competitions</li>
+            <li>Volunteer for local community events and tech workshops</li>
+            <li>Organized design and creative workshops at college fest</li>
+        </ol>
     </div>
 
-    <hr>
+    <div class="section">
+        <h2>Skills</h2>
+        <ul class="skills">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>UI/UX Design</li>
+            <li>Responsive Design</li>
+            <li>Figma</li>
+        </ul>
+    </div>
 
-    <h2>Degree Education</h2>
-    <div class="education-item">
-        <div class="date">2022-2026</div>
-        <div class="degree">Marwadi University - Rajkot</div
+    <div class="section">
+        <h2>Projects</h2>
+        <div class="project-item">
+            <strong>Portfolio Website:</strong> <a href="#">View Project</a>
+        </div>
+        <div class="project-item">
+            <strong>E-commerce Web App:</strong> <a href="#">View Project</a>
+        </div>
+        <div class="project-item">
+            <strong>Blog Platform:</strong> <a href="#">View Project</a>
+        </div>
+    </div>
 
-            
+    <div class="section">
+        <h2>Contact</h2>
+        <p>If you’d like to work together or have any questions, feel free to reach out!</p>
+        <p>Email: ishalimbasiya@gmail.com | Mobile: 7694949999</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Isha Limbasiya. All rights reserved.
+    </footer>
+</body>
+</html>
