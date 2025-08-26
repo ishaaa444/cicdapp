@@ -4,7 +4,7 @@ pipeline {
     environment {
         GH_REPO = 'https://github.com/ishaaa444/cicdapp.git'
         GH_BRANCH = 'gh-pages'
-        GITHUB_TOKEN = github_token // <-- Your Jenkins credential ID here
+        GITHUB_TOKEN = credentials('github_token') // <-- Use your Jenkins credential ID here
     }
 
     stages {
@@ -40,7 +40,7 @@ pipeline {
                 // Switch to gh-pages branch (creates if not exists)
                 bat 'git checkout -B gh-pages'
 
-                // Add all files (or just index.html if preferred)
+                // Add all files
                 bat 'git add .'
 
                 // Commit changes (ignore if nothing changed)
