@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    environment {
+        GH_REPO = 'https://github.com/ishaaa444/cicdapp.git'
+        GH_BRANCH = 'gh-pages'
+        GITHUB_TOKEN = github_token // <-- Your Jenkins credential ID here
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -12,42 +18,43 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Static site - no build required'
-                // Optional: add CSS/JS minification or pre-processing here
+                // Optional: CSS/JS minification can be added here
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Optional: run HTML/CSS linter'
-                // Example: bat 'npx htmlhint index.html' if you have htmlhint installed
+                // Example: bat 'npx htmlhint index.html' if using htmlhint
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying static site'
+                echo 'Deploying static site to GitHub Pages'
 
-                // Option 1: Copy to a local deploy folder
-                bat 'mkdir deploy'
-                bat 'xcopy /E /Y /I * deploy\\'
-
-                // Option 2 (Advanced): Automatically push to GitHub Pages
-                // Uncomment if you want to push to gh-pages branch
-                /*
+                // Configure Git user
                 bat 'git config --global user.email "jenkins@example.com"'
                 bat 'git config --global user.name "Jenkins"'
+
+                // Switch to gh-pages branch (creates if not exists)
                 bat 'git checkout -B gh-pages'
+
+                // Add all files (or just index.html if preferred)
                 bat 'git add .'
-                bat 'git commit -m "Automated deploy from Jenkins" || echo "No changes to commit"'
-                bat 'git push -f https://<TOKEN>@github.com/ishaaa444/cicdapp.git gh-pages'
-                */
+
+                // Commit changes (ignore if nothing changed)
+                bat 'git commit -m "Automated deploy from Jenkins" || echo No changes to commit'
+
+                // Push using the GitHub token
+                bat "git push -f https://${GITHUB_TOKEN}@github.com/ishaaa444/cicdapp.git gh-pages"
             }
         }
     }
 
     post {
         success {
-            echo '✅ Pipeline completed successfully!'
+            echo '✅ Pipeline completed successfully! Site deployed to GitHub Pages.'
         }
         failure {
             echo '❌ Pipeline failed!'
